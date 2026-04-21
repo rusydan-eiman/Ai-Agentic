@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-support-agent",
+  "version": "1.0.0",
+  "description": "LangGraph agent for order management",
+  "main": "my_agent.py",
+  "settings": [
+    {
+      "name": "Google API Key",
+      "envVar": "GOOGLE_API_KEY",
+      "sensitive": true
+    }
+  ]
+}
