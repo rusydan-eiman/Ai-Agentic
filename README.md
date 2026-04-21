@@ -34,13 +34,13 @@ Python was chosen as the primary backend language because it is the **industry s
 - **[SQLite](https://www.sqlite.org/)**: Lightweight relational database for persistent order storage.
 
 ### **Experience (Frontend)**
+
 - **[Next.js 15+](https://nextjs.org/)**: React 19 framework for building high-performance user interfaces.
 - **[Shadcn UI](https://ui.shadcn.com/)**: Accessible components built with Radix UI.
 - **[Styled Components](https://styled-components.com/)**: For advanced, dynamic CSS-in-JS styling and custom layouts.
 - **[Tailwind CSS v4](https://tailwindcss.com/)**: Utility-first CSS for responsive design and dark mode.
 - **[Lucide React](https://lucide.dev/)**: For a consistent and professional icon system.
 - **[Next Themes](https://github.com/pacocoursey/next-themes)**: For seamless dark/light mode management.
-
 
 ---
 
@@ -100,6 +100,7 @@ npm run dev
 ### 4. Credentials for Testing
 
 - **Email**: `tester@enterprise.com`
+- **Company Name**: `tester123`
 - **Password**: `12345`
 
 ---
