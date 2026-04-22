@@ -97,7 +97,7 @@ npm install
 npm run dev
 ```
 
-### 4. Credentials for Testing
+### 4. Credentials for Testing(Choose Enterprise)
 
 - **Email**: `tester@enterprise.com`
 - **Company Name**: `tester123`
