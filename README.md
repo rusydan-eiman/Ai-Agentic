@@ -58,11 +58,17 @@ Python was chosen as the primary backend language because it is the **industry s
 
 ```text
 /
-├── fronten_streamlit/     # Legacy Streamlit interface
-├── frontend-next/         # Modern Next.js application
 ├── backend/               # FastAPI & Agentic Logic (LangGraph)
+│   ├── main.py            # API entry point
+│   └── my_agent.py        # LangGraph Orchestration & Tools
 ├── data/                  # SQLite Database & Database Logic
-├── example-design/        # UI/UX Design assets and references
+│   ├── database.py        # Database operations
+│   └── schema.sql         # SQL schema definition
+├── frontend-next/         # Modern Next.js application
+│   ├── app/               # App Router (Login, Main Dashboard)
+│   ├── components/        # Shadcn UI & Custom components
+│   └── hooks/             # Custom React hooks
+├── fronten_streamlit/     # Legacy Streamlit interface
 └── Makefile               # Automation commands
 ```
 
