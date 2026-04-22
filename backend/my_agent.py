@@ -9,7 +9,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode # New import
 from langgraph.checkpoint.memory import MemorySaver # New import
-from .database import get_order, update_order_status # New database imports
+from data.database import get_order, update_order_status # New database imports
 
 load_dotenv()
 
