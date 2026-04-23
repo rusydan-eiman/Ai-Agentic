@@ -35,7 +35,7 @@ const mainNav = [
   },
   {
     title: "Orders",
-    url: "#",
+    url: "/add-order",
     icon: ShoppingCart,
   },
 ]

@@ -9,7 +9,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode # New import
 from langgraph.checkpoint.memory import MemorySaver # New import
-from data.database import get_order, update_order_status # New database imports
+from data.database import get_order, update_order_status, add_order as db_add_order # New database imports
 
 load_dotenv()
 
@@ -34,16 +34,12 @@ def cancel_order(order_id: str) -> str:
     update_order_status(order_id, "Cancelled")
     return f"Order {order_id} has been successfully cancelled."
 
-def add_order(order_id: str) -> str:
-    """Add a new order."""
-    order = get_order(order_id)
-    if order:
-        return f"Order {order_id} already exists."
-    
-    update_order_status(order_id, "Pending")
-    return f"Order {order_id} has been successfully added."
+@tool
+def create_new_order(order_id: str, customer_name: str, item: str, item_type: str, status: str = "Pending") -> str:
+    """Add a new order to the database."""
+    return db_add_order(order_id, customer_name, item, item_type, status)
 
-tools = [cancel_order, get_order_status, add_order]
+tools = [cancel_order, get_order_status, create_new_order]
 tool_node = ToolNode(tools)
 
 class State(TypedDict):
@@ -57,7 +53,8 @@ def call_model(state: State):
     
     prompt = (
         f"You are an ecommerce support agent. ORDER ID: {order['order_id']}\n"
-        "You can check order status with get_order_status(order_id) and cancel orders with cancel_order(order_id)."
+        "You can check order status with get_order_status(order_id), cancel orders with cancel_order(order_id), "
+        "and create new orders with create_new_order(order_id, customer_name, item, item_type, status)."
     )
     
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)

@@ -17,6 +17,11 @@ This document tracks the development progress, architectural decisions, and curr
 ## Steps Completed
 - [x] Project initialization and directory structure mapping.
 - [x] Initial `progress.md` creation.
+- [x] Updated AI agent with `create_new_order` tool.
+- [x] Added `/add-order` POST endpoint to FastAPI backend.
+- [x] Created "Add Order" page in Next.js frontend with form validation.
+- [x] Integrated "Add Order" navigation in the sidebar.
 
 ## Current Focus / Failure
-- Awaiting user code update for review.
+- Verification of the new "Add Order" flow.
+- Ensure the AI agent can successfully search for the newly added orders.
